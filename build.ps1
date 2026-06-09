@@ -68,10 +68,6 @@ switch ($Task) {
         & "$CTEST" --test-dir out\build\windows-msvc-debug --output-on-failure
         $ec = $LASTEXITCODE
     }
-    "list-presets" {
-        & "$CMAKE" --list-presets=all
-        $ec = $LASTEXITCODE
-    }
     default {
         Write-Host "Unknown task: $Task" -ForegroundColor Red
         Write-Host "Valid: clean, configure, build, test" -ForegroundColor Yellow
