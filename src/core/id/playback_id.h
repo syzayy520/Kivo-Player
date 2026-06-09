@@ -1,7 +1,7 @@
 ﻿// Copyright (c) 2026 Kivo Project. All rights reserved.
 // src/core/id/playback_id.h - Core identity types for playback system.
 // Depends on: standard library only.
-// Does NOT depend on: any project module, FFmpeg, D3D11, WASAPI, mpv, Qt, UI, Windows headers.
+// Does NOT depend on: any project module, media backends, UI, Windows headers.
 
 #pragma once
 #include <cstdint>

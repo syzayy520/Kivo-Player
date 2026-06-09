@@ -1,6 +1,6 @@
 param()
-# check-include-direction.ps1 - Check include direction governance
-# src/core should only include std lib and core internal headers, not 3rd-party headers
+# check-playback-include-direction.ps1 - Check include direction governance
+# Playback source directories should only include std lib and internal headers, not 3rd-party headers
 
 $ErrorActionPreference = "Stop"
 
@@ -8,26 +8,13 @@ Write-Output "=== Include Direction Check ==="
 
 $exitCode = 0
 
-# Directories to check
-$dirsToCheck = @("src/core")
-
-# Allowed include patterns for src/core
-$allowedPatterns = @(
-    '^#include <[a-z]',  # std lib includes like <iostream>, <vector>, etc.
-    '^#include "core/',  # core internal includes
-    '^#include "playback_',  # core internal includes (alternative pattern)
-    '^#include "error/"',
-    '^#include "state/"',
-    '^#include "command/"',
-    '^#include "engine/"',
-    '^#include "event/"',
-    '^#include "session/"',
-    '^#include "clock/"',
-    '^#include "timeline/"',
-    '^#include "capability/"',
-    '^#include "id/"',
-    '^#include "time/"',
-    '^#include "result/"'
+# Directories to check (playback source directories)
+$dirsToCheck = @(
+    "src/core",
+    "src/pipeline/contracts",
+    "src/decoder/contracts", 
+    "src/render/contracts",
+    "src/audio/contracts"
 )
 
 # Forbidden patterns (3rd-party includes)
@@ -47,8 +34,11 @@ $forbiddenPatterns = @(
 
 foreach ($dir in $dirsToCheck) {
     if (-not (Test-Path $dir)) {
+        Write-Output "SKIP: [$dir] not found"
         continue
     }
+    
+    Write-Output "Scanning: [$dir]"
     
     $files = Get-ChildItem -Path $dir -Recurse -File -Include "*.h","*.cpp" -ErrorAction SilentlyContinue
     
@@ -58,11 +48,6 @@ foreach ($dir in $dirsToCheck) {
         
         foreach ($line in $content) {
             $lineNum++
-            
-            # Skip comments and empty lines
-            if ($line -match '^\s*//' -or $line -match '^\s*$') {
-                continue
-            }
             
             # Check for #include lines
             if ($line -match '^#include\s+["<](.+)[">]') {

@@ -1,6 +1,6 @@
 // src/core/engine/playback_engine.h - Playback engine core.
 // Owns state transitions, receives commands, outputs events, returns results.
-// Does NOT depend on real FFmpeg/D3D11/WASAPI/libmpv/Qt/UI.
+// Does NOT depend on real media backends/platform backends.
 #pragma once
 #include "../command/playback_command.h"
 #include "../state/playback_state_machine.h"

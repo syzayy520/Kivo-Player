@@ -1,6 +1,6 @@
 ﻿// src/core/command/playback_command.h - User playback intent and payload validation.
 // Depends on: core/id, core/time, core/result, core/error, standard library.
-// Does NOT depend on: engine, pipeline, decoder, output, FFmpeg, D3D11, WASAPI, UI.
+// Does NOT depend on: engine, pipeline, decoder, output, media backends, UI.
 #pragma once
 #include "../id/playback_id.h"
 #include "../time/playback_time.h"

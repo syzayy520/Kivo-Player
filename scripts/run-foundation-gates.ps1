@@ -26,14 +26,14 @@ if ($LASTEXITCODE -ne 0) {
 
 # Gate 3: Include Direction
 Write-Output "`n--- Gate 3: Include Direction ---"
-& "$PSScriptRoot/check-include-direction.ps1"
+& "$PSScriptRoot/check-playback-include-direction.ps1"
 if ($LASTEXITCODE -ne 0) {
     $exitCode = 1
 }
 
 # Gate 4: Source Purity
 Write-Output "`n--- Gate 4: Source Purity ---"
-& "$PSScriptRoot/check-source-purity.ps1"
+& "$PSScriptRoot/check-playback-core-source-purity.ps1"
 if ($LASTEXITCODE -ne 0) {
     $exitCode = 1
 }
