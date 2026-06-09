@@ -14,13 +14,22 @@ P0-001 到 P0-028 是后端播放核心路线，本仓库只做自研播放核�
 - 状态: ACTIVE
 - 范围: P0-002 到 P0-028 必须继承此方向
 
+## P0 统一执行协议
+
+**KIVO P0 统一自动化执行主协议** 定义了 P0-002 到 P0-028 每张任务必须遵循的执行流程、治理规则、STOP 条件和报告格式。
+
+- 文档: `docs/23-p0-autonomous-execution-master-protocol.md`
+- 状态: ACTIVE
+- 范围: P0-002 到 P0-028 必须继承此协议
+
 ## 当前状态
 
 | Ticket | 状态 | 说明 |
 |--------|------|------|
 | P0-001 | ✅ 已完成 | Playback Core Foundation (Core Brain) |
-| P0-001B | 🔄 进行中 | North Star (方向文档) |
-| P0-002 | ⏳ 待开始 | Pipeline Contracts (待 P0-001B 完成) |
+| P0-001B | ✅ 已完成 | North Star (方向文档) |
+| P0-Master-Protocol | 🔄 进行中 | P0 统一自动化执行主协议 |
+| P0-002 | ⏳ 待开始 | Pipeline Contracts (待 P0-Master-Protocol 完成) |
 
 ## 目录结构
 
