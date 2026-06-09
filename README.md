@@ -6,9 +6,21 @@ Kivo 最强播放器自研核心地基项目。
 
 P0-001 到 P0-028 是后端播放核心路线，本仓库只做自研播放核心地基，不接真实 FFmpeg/D3D11/WASAPI/libmpv/Qt/UI。
 
+## North Star
+
+**Kivo Playback Core North Star** 定义了播放核心的长期方向、架构总纲、核心原则、禁止偏航规则。
+
+- 文档: `docs/24-playback-core-north-star.md`
+- 状态: ACTIVE
+- 范围: P0-002 到 P0-028 必须继承此方向
+
 ## 当前状态
 
-P0-001: Playback Core Foundation — ✅ 已完成
+| Ticket | 状态 | 说明 |
+|--------|------|------|
+| P0-001 | ✅ 已完成 | Playback Core Foundation (Core Brain) |
+| P0-001B | 🔄 进行中 | North Star (方向文档) |
+| P0-002 | ⏳ 待开始 | Pipeline Contracts (待 P0-001B 完成) |
 
 ## 目录结构
 
