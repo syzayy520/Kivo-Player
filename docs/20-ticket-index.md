@@ -20,7 +20,8 @@ P0 路线是**后端播放核心路线**，不是商业 UI 路线。本仓库只
 | Ticket | 名称 | 状态 | 说明 |
 |--------|------|------|------|
 | [P0-001](#p0-001) | Playback Core Foundation (Core Brain) | ✅ PASS_COMMITTED | 播放核心地基：Command, Event, Error, StateMachine, Engine |
-| [P0-001B](#p0-001b) | Playback Core North Star | 🔄 IN_PROGRESS | 播放核心北极星方向文档 |
+| [P0-001B](#p0-001b) | Playback Core North Star | ✅ PASS_COMMITTED | 播放核心北极星方向文档 |
+| [P0-Master-Protocol](#p0-master-protocol) | P0 Autonomous Execution Master Protocol | ✅ PASS_COMMITTED | P0-002 到 P0-028 统一自动化执行协议 |
 | [P0-002](#p0-002) | Pipeline Contracts | ⏳ PENDING | Pipeline 合同层：probe/demux/stream/packet/queue/flush/drain/seek/cancellation |
 | [P0-003](#p0-003) | Media Probe Model | ⏳ PENDING | Media Probe 模型 |
 | [P0-004](#p0-004) | Packet Flow Contracts | ⏳ PENDING | Packet Flow 合同：packet/queue/discontinuity/EOS/serial generation |
@@ -97,9 +98,27 @@ P0 路线是**后端播放核心路线**，不是商业 UI 路线。本仓库只
 
 ---
 
+### P0-Master-Protocol: P0 Autonomous Execution Master Protocol
+
+**状态**: ✅ PASS_COMMITTED  
+**目标**: 为 P0-002 到 P0-028 建立统一自动化执行协议  
+**范围**: 只写协议文档，不实现代码  
+**输出**:
+- `docs/23-p0-autonomous-execution-master-protocol.md` - P0 统一自动化执行主协议
+- `README.md` - 更新项目 README
+- `docs/README.md` - 更新文档索引
+- `docs/20-ticket-index.md` - 更新 ticket 索引
+
+**禁止**:
+- 实现代码
+- 改 CMake
+- 接 FFmpeg / D3D11 / WASAPI / libmpv / Qt / UI
+
+---
+
 ### P0-002: Pipeline Contracts
 
-**状态**: ⏳ PENDING (等待 P0-001B 完成)  
+**状态**: ⏳ PENDING  
 **目标**: 建立 probe / demux / stream / packet / queue / flush / drain / seek / cancellation 的 Pipeline 合同族  
 **范围**:
 - `src/pipeline/contracts/` - Pipeline 合同层
