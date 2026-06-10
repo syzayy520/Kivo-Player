@@ -133,3 +133,7 @@ add_subdirectory(tests/diagnostics/contracts)
 # Media Case / Stress Scenario Contracts (P0-019)
 add_subdirectory(src/scenario/contracts)
 add_subdirectory(tests/scenario/contracts)
+
+# Minimal Playback Orchestration Skeleton (P1-020)
+add_subdirectory(src/playback/orchestration)
+add_subdirectory(tests/playback/orchestration)
