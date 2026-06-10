@@ -101,3 +101,7 @@ add_subdirectory(tests/demuxer/contracts)
 # Media Format / Color / HDR Metadata Contracts (P0-011)
 add_subdirectory(src/format/contracts)
 add_subdirectory(tests/format/contracts)
+
+# Capability / Negotiation Contracts (P0-012)
+add_subdirectory(src/capability/contracts)
+add_subdirectory(tests/capability/contracts)
