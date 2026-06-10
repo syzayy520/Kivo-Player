@@ -113,3 +113,7 @@ add_subdirectory(tests/device/contracts)
 # Video Renderer Contracts (P0-014)
 add_subdirectory(src/render/contracts)
 add_subdirectory(tests/render/contracts)
+
+# Audio Endpoint / Renderer / Clock / Passthrough Contracts (P0-015)
+add_subdirectory(src/audio/contracts)
+add_subdirectory(tests/audio/contracts)
