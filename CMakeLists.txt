@@ -69,3 +69,7 @@ add_subdirectory(tests/pipeline/contracts)
 # Media Probe Model (P0-003)
 add_subdirectory(src/pipeline/model/probe)
 add_subdirectory(tests/pipeline/model/probe)
+
+# Packet Flow Contracts (P0-004)
+add_subdirectory(src/pipeline/model/packet_flow)
+add_subdirectory(tests/pipeline/model/packet_flow)
