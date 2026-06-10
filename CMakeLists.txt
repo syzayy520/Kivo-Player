@@ -81,3 +81,7 @@ add_subdirectory(tests/decoder/contracts)
 # Timeline / Timestamp / Segment Contracts (P0-006)
 add_subdirectory(src/core/timeline)
 add_subdirectory(tests/core/timeline)
+
+# Clock Domain / A-V Sync Contracts (P0-007)
+add_subdirectory(src/core/clock)
+add_subdirectory(tests/core/clock)
