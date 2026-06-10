@@ -129,3 +129,7 @@ add_subdirectory(tests/execution/contracts)
 # Diagnostics / Telemetry / Trace Contracts (P0-018)
 add_subdirectory(src/diagnostics/contracts)
 add_subdirectory(tests/diagnostics/contracts)
+
+# Media Case / Stress Scenario Contracts (P0-019)
+add_subdirectory(src/scenario/contracts)
+add_subdirectory(tests/scenario/contracts)
