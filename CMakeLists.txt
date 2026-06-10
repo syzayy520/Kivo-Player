@@ -121,3 +121,7 @@ add_subdirectory(tests/audio/contracts)
 # Subtitle / Overlay Contracts (P0-016)
 add_subdirectory(src/subtitle/contracts)
 add_subdirectory(tests/subtitle/contracts)
+
+# Execution / Concurrency / Task Contracts (P0-017)
+add_subdirectory(src/execution/contracts)
+add_subdirectory(tests/execution/contracts)
