@@ -1,10 +1,10 @@
 #pragma once
 namespace kivo::playback::render {
 enum class RenderSubmissionStatus {
+    Accepted,
+    Partial,
+    Rejected,
     Queued,
-    InProgress,
-    Completed,
-    Dropped,
-    Failed
+    Unknown
 };
 }

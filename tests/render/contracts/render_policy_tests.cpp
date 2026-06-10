@@ -7,48 +7,55 @@
 
 namespace kivo::playback::render {
 void run_render_policy_tests() {
-    // Test RenderPacingPolicy
-    RenderPacingPolicy pacing1 = RenderPacingPolicy::Realtime;
-    RenderPacingPolicy pacing2 = RenderPacingPolicy::LowLatency;
-    RenderPacingPolicy pacing3 = RenderPacingPolicy::BestEffort;
-    RenderPacingPolicy pacing4 = RenderPacingPolicy::Offline;
+    // Test RenderPacingPolicy (approved: FollowPresentationPacing, FreeRun)
+    RenderPacingPolicy pacing1 = RenderPacingPolicy::FollowPresentationPacing;
+    RenderPacingPolicy pacing2 = RenderPacingPolicy::FreeRun;
     assert(pacing1 != pacing2);
-    assert(pacing2 != pacing3);
-    assert(pacing3 != pacing4);
     
-    // Test RenderColorPolicy
+    // Test RenderColorPolicy (approved: RenderColorIntent intent only)
     RenderColorPolicy color1;
-    assert(color1.output_color_space.primaries == kivo::playback::format::ColorPrimaries::Unknown);
-    assert(color1.auto_convert == true);
+    assert(color1.intent == RenderColorIntent::Unknown);
     
-    RenderColorPolicy color2{
-        .output_color_space{.primaries{kivo::playback::format::ColorPrimaries::BT709}},
-        .auto_convert{false}
-    };
-    assert(color2.output_color_space.primaries == kivo::playback::format::ColorPrimaries::BT709);
-    assert(color2.auto_convert == false);
+    RenderColorPolicy color2{.intent{RenderColorIntent::PassthroughColor}};
+    assert(color2.intent == RenderColorIntent::PassthroughColor);
     
-    // Test RenderHdrPolicy
+    // Test RenderColorIntent
+    RenderColorIntent intent1 = RenderColorIntent::PassthroughColor;
+    RenderColorIntent intent2 = RenderColorIntent::MatchTargetColor;
+    assert(intent1 != intent2);
+    
+    // Test RenderHdrPolicy (approved: RenderHdrIntent + HdrStaticMetadata)
     RenderHdrPolicy hdr1;
-    assert(hdr1.mode == HdrMode::Off);
+    assert(hdr1.intent == RenderHdrIntent::Unknown);
     assert(hdr1.hdr_metadata.mastering.max_luminance == 0.0f);
     
     RenderHdrPolicy hdr2{
-        .mode{HdrMode::Auto},
+        .intent{RenderHdrIntent::ToneMapToReference},
         .hdr_metadata{.mastering{.max_luminance{1000.0f}}}
     };
-    assert(hdr2.mode == HdrMode::Auto);
+    assert(hdr2.intent == RenderHdrIntent::ToneMapToReference);
     assert(hdr2.hdr_metadata.mastering.max_luminance == 1000.0f);
     
-    // Test RenderFailurePolicy
-    RenderFailurePolicy failure1 = RenderFailurePolicy::Abort;
+    // Test RenderHdrIntent
+    RenderHdrIntent hintent1 = RenderHdrIntent::PassthroughHdr;
+    RenderHdrIntent hintent2 = RenderHdrIntent::ToneMapToReference;
+    RenderHdrIntent hintent3 = RenderHdrIntent::ToneMapToTarget;
+    assert(hintent1 != hintent2);
+    assert(hintent2 != hintent3);
+    
+    // Test RenderFailurePolicy (approved: AbortSubmission,SkipFrame,RetryOnce,NotifyAndContinue,Unknown)
+    RenderFailurePolicy failure1 = RenderFailurePolicy::AbortSubmission;
     RenderFailurePolicy failure2 = RenderFailurePolicy::SkipFrame;
-    RenderFailurePolicy failure3 = RenderFailurePolicy::BlackFrame;
-    RenderFailurePolicy failure4 = RenderFailurePolicy::LastGoodFrame;
+    RenderFailurePolicy failure3 = RenderFailurePolicy::RetryOnce;
+    RenderFailurePolicy failure4 = RenderFailurePolicy::NotifyAndContinue;
+    RenderFailurePolicy failure5 = RenderFailurePolicy::Unknown;
     assert(failure1 != failure2);
     assert(failure2 != failure3);
     assert(failure3 != failure4);
+    assert(failure4 != failure5);
     
     std::cout << "  render_policy_tests: ALL PASSED\n";
 }
 }
+
+// main() is in render_identity_tests.cpp

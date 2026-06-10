@@ -1,9 +1,10 @@
 #pragma once
 namespace kivo::playback::render {
 enum class RenderDropReason {
-    LateFrame,
-    DuplicateFrame,
-    Backpressure,
-    PolicySkip
+    LatePresentation,
+    QueuePressure,
+    PolicyOverride,
+    GenerationStale,
+    Unknown
 };
 }

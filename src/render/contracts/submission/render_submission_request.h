@@ -1,9 +1,12 @@
 #pragma once
+#include <vector>
 #include "render_submission_id.h"
-#include "core/timeline/timestamp/media_timestamp.h"
+#include "../frame/render_frame_id.h"
+#include "../target/render_target_id.h"
 namespace kivo::playback::render {
 struct RenderSubmissionRequest {
     RenderSubmissionId submission_id{};
-    kivo::playback::timeline::MediaTimestamp target_time{};
+    std::vector<RenderFrameId> frame_ids{};
+    RenderTargetId target_id{};
 };
 }

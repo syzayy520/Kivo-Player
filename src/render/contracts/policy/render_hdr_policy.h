@@ -1,14 +1,15 @@
 #pragma once
 #include "format/contracts/hdr/hdr_static_metadata.h"
 namespace kivo::playback::render {
-enum class HdrMode {
-    Off,
-    Auto,
-    ForceSDR,
-    ForceHDR
+enum class RenderHdrIntent {
+    PassthroughHdr,
+    ToneMapToReference,
+    ToneMapToTarget,
+    Unknown
 };
+
 struct RenderHdrPolicy {
-    HdrMode mode{HdrMode::Off};
+    RenderHdrIntent intent{RenderHdrIntent::Unknown};
     kivo::playback::format::HdrStaticMetadata hdr_metadata{};
 };
 }

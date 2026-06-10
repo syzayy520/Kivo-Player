@@ -1,9 +1,12 @@
 #pragma once
+#include <cstdint>
 #include "render_submission_id.h"
-#include "../outcome/render_outcome_status.h"
+#include "render_submission_status.h"
 namespace kivo::playback::render {
 struct RenderSubmissionResult {
     RenderSubmissionId submission_id{};
-    RenderOutcomeStatus status{RenderOutcomeStatus::Pending};
+    RenderSubmissionStatus status{RenderSubmissionStatus::Unknown};
+    uint64_t frames_accepted{0};
+    uint64_t frames_dropped{0};
 };
 }

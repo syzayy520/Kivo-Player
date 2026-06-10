@@ -36,31 +36,38 @@ void run_render_target_tests() {
     assert(desc2.pixel_format_hint.format_family_id == 2);
     assert(desc2.color_space_hint.primaries == kivo::playback::format::ColorPrimaries::BT709);
     
-    // Test RenderTargetState
-    RenderTargetState state1 = RenderTargetState::Active;
-    RenderTargetState state2 = RenderTargetState::Suspended;
-    RenderTargetState state3 = RenderTargetState::Lost;
-    RenderTargetState state4 = RenderTargetState::Closed;
+    // Test RenderTargetState (approved: Uninitialized,Active,Suspended,Resized,Inactive,Unknown)
+    RenderTargetState state1 = RenderTargetState::Uninitialized;
+    RenderTargetState state2 = RenderTargetState::Active;
+    RenderTargetState state3 = RenderTargetState::Suspended;
+    RenderTargetState state4 = RenderTargetState::Resized;
+    RenderTargetState state5 = RenderTargetState::Inactive;
+    RenderTargetState state6 = RenderTargetState::Unknown;
     assert(state1 != state2);
     assert(state2 != state3);
     assert(state3 != state4);
+    assert(state4 != state5);
+    assert(state5 != state6);
     
-    // Test RenderTargetGeneration
+    // Test RenderTargetGeneration (approved: { uint64_t value })
     RenderTargetGeneration gen1;
-    assert(gen1.device_gen.value == 0);
-    RenderTargetGeneration gen2{.device_gen{.value{42}}};
-    assert(gen2.device_gen.value == 42);
+    assert(gen1.value == 0);
+    RenderTargetGeneration gen2{42};
+    assert(gen2.value == 42);
     
-    // Test RenderTargetDeviceBinding
+    // Test RenderTargetDeviceBinding (approved: target_id + DeviceId + DeviceGeneration)
     RenderTargetDeviceBinding binding1;
     assert(binding1.target_id.value == 0);
-    assert(binding1.device.value == 0);
+    assert(binding1.device_id.value == 0);
+    assert(binding1.device_generation.value == 0);
     RenderTargetDeviceBinding binding2{
         .target_id{131415},
-        .device{.value{161718}}
+        .device_id{kivo::playback::device::DeviceId{161718}},
+        .device_generation{kivo::playback::device::DeviceGeneration{42}}
     };
     assert(binding2.target_id.value == 131415);
-    assert(binding2.device.value == 161718);
+    assert(binding2.device_id.value == 161718);
+    assert(binding2.device_generation.value == 42);
     
     // Test RenderTargetCapabilitySnapshot
     RenderTargetCapabilitySnapshot snapshot1;

@@ -1,9 +1,10 @@
 #pragma once
 namespace kivo::playback::render {
 enum class RenderFailurePolicy {
-    Abort,
+    AbortSubmission,
     SkipFrame,
-    BlackFrame,
-    LastGoodFrame
+    RetryOnce,
+    NotifyAndContinue,
+    Unknown
 };
 }

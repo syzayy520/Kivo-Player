@@ -1,10 +1,10 @@
 #pragma once
 namespace kivo::playback::render {
 enum class RenderOutcomeStatus {
-    Pending,
-    Presented,
+    Rendered,
     Dropped,
     Failed,
-    Cancelled
+    Skipped,
+    Unknown
 };
 }

@@ -1,5 +1,6 @@
 #include <cassert>
 #include <iostream>
+#include <vector>
 #include "render/contracts/submission/render_submission_id.h"
 #include "render/contracts/submission/render_submission_request.h"
 #include "render/contracts/submission/render_submission_result.h"
@@ -13,36 +14,48 @@ void run_render_submission_tests() {
     RenderSubmissionId submission_id2{222324};
     assert(submission_id2.value == 222324);
     
-    // Test RenderSubmissionRequest
+    // Test RenderSubmissionRequest (approved: vector<RenderFrameId> + RenderTargetId)
     RenderSubmissionRequest request1;
     assert(request1.submission_id.value == 0);
-    assert(request1.target_time.value == 0);
+    assert(request1.frame_ids.empty());
+    assert(request1.target_id.value == 0);
     
     RenderSubmissionRequest request2{
         .submission_id{252627},
-        .target_time{.value{50000}}
+        .frame_ids{RenderFrameId{1}, RenderFrameId{2}, RenderFrameId{3}},
+        .target_id{102030}
     };
     assert(request2.submission_id.value == 252627);
-    assert(request2.target_time.value == 50000);
+    assert(request2.frame_ids.size() == 3);
+    assert(request2.frame_ids[0].value == 1);
+    assert(request2.frame_ids[1].value == 2);
+    assert(request2.frame_ids[2].value == 3);
+    assert(request2.target_id.value == 102030);
     
-    // Test RenderSubmissionResult
+    // Test RenderSubmissionResult (approved: RenderSubmissionStatus + frames_accepted + frames_dropped)
     RenderSubmissionResult result1;
     assert(result1.submission_id.value == 0);
-    assert(result1.status == RenderOutcomeStatus::Pending);
+    assert(result1.status == RenderSubmissionStatus::Unknown);
+    assert(result1.frames_accepted == 0);
+    assert(result1.frames_dropped == 0);
     
     RenderSubmissionResult result2{
         .submission_id{282930},
-        .status{RenderOutcomeStatus::Presented}
+        .status{RenderSubmissionStatus::Accepted},
+        .frames_accepted{3},
+        .frames_dropped{0}
     };
     assert(result2.submission_id.value == 282930);
-    assert(result2.status == RenderOutcomeStatus::Presented);
+    assert(result2.status == RenderSubmissionStatus::Accepted);
+    assert(result2.frames_accepted == 3);
+    assert(result2.frames_dropped == 0);
     
-    // Test RenderSubmissionStatus
-    RenderSubmissionStatus status1 = RenderSubmissionStatus::Queued;
-    RenderSubmissionStatus status2 = RenderSubmissionStatus::InProgress;
-    RenderSubmissionStatus status3 = RenderSubmissionStatus::Completed;
-    RenderSubmissionStatus status4 = RenderSubmissionStatus::Dropped;
-    RenderSubmissionStatus status5 = RenderSubmissionStatus::Failed;
+    // Test RenderSubmissionStatus (approved: Accepted,Partial,Rejected,Queued,Unknown)
+    RenderSubmissionStatus status1 = RenderSubmissionStatus::Accepted;
+    RenderSubmissionStatus status2 = RenderSubmissionStatus::Partial;
+    RenderSubmissionStatus status3 = RenderSubmissionStatus::Rejected;
+    RenderSubmissionStatus status4 = RenderSubmissionStatus::Queued;
+    RenderSubmissionStatus status5 = RenderSubmissionStatus::Unknown;
     assert(status1 != status2);
     assert(status2 != status3);
     assert(status3 != status4);

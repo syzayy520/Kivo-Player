@@ -1,9 +1,11 @@
 #pragma once
 namespace kivo::playback::render {
 enum class RenderTargetState {
+    Uninitialized,
     Active,
     Suspended,
-    Lost,
-    Closed
+    Resized,
+    Inactive,
+    Unknown
 };
 }

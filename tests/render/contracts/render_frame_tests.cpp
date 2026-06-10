@@ -44,17 +44,20 @@ void run_render_frame_tests() {
     assert(timing2.deadline.deadline_us == 16666);
     assert(timing2.deadline.tolerance_us == 1000);
     
-    // Test RenderFrameSurface
+    // Test RenderFrameSurface (approved: SurfaceHandle + width + height)
     RenderFrameSurface surface1;
-    assert(surface1.frame_id.value == 0);
     assert(surface1.surface.id == 0);
+    assert(surface1.width == 0);
+    assert(surface1.height == 0);
     
     RenderFrameSurface surface2{
-        .frame_id{789},
-        .surface{.id{0x12345678}}
+        .surface{.id{0x12345678}},
+        .width{1920},
+        .height{1080}
     };
-    assert(surface2.frame_id.value == 789);
     assert(surface2.surface.id == 0x12345678);
+    assert(surface2.width == 1920);
+    assert(surface2.height == 1080);
     
     std::cout << "  render_frame_tests: ALL PASSED\n";
 }

@@ -1,8 +1,12 @@
 #pragma once
-#include "format/contracts/color/color_space_descriptor.h"
 namespace kivo::playback::render {
+enum class RenderColorIntent {
+    PassthroughColor,
+    MatchTargetColor,
+    Unknown
+};
+
 struct RenderColorPolicy {
-    kivo::playback::format::ColorSpaceDescriptor output_color_space{};
-    bool auto_convert{true};
+    RenderColorIntent intent{RenderColorIntent::Unknown};
 };
 }
