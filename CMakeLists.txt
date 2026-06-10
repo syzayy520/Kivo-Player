@@ -61,3 +61,7 @@ target_link_libraries(kivo_playback_contract_compile_tests PRIVATE kivo_playback
 add_test(NAME contract_compile_tests COMMAND kivo_playback_contract_compile_tests)
 
 message(STATUS "Kivo Video Ultimate - Playback Core Foundation P0-001")
+
+# Pipeline Contracts (P0-002)
+add_subdirectory(src/pipeline/contracts)
+add_subdirectory(tests/pipeline/contracts)
