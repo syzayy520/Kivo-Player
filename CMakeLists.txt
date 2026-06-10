@@ -137,3 +137,7 @@ add_subdirectory(tests/scenario/contracts)
 # Minimal Playback Orchestration Skeleton (P1-020)
 add_subdirectory(src/playback/orchestration)
 add_subdirectory(tests/playback/orchestration)
+
+# Playback Command / Intent Normalization Skeleton (P1-021)
+add_subdirectory(src/playback/control)
+add_subdirectory(tests/playback/control)
