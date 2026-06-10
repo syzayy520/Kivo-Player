@@ -77,3 +77,7 @@ add_subdirectory(tests/pipeline/model/packet_flow)
 # Decode Contracts (P0-005)
 add_subdirectory(src/decoder/contracts)
 add_subdirectory(tests/decoder/contracts)
+
+# Timeline / Timestamp / Segment Contracts (P0-006)
+add_subdirectory(src/core/timeline)
+add_subdirectory(tests/core/timeline)
