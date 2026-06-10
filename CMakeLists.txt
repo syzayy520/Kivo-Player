@@ -65,3 +65,7 @@ message(STATUS "Kivo Video Ultimate - Playback Core Foundation P0-001")
 # Pipeline Contracts (P0-002)
 add_subdirectory(src/pipeline/contracts)
 add_subdirectory(tests/pipeline/contracts)
+
+# Media Probe Model (P0-003)
+add_subdirectory(src/pipeline/model/probe)
+add_subdirectory(tests/pipeline/model/probe)
