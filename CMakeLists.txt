@@ -117,3 +117,7 @@ add_subdirectory(tests/render/contracts)
 # Audio Endpoint / Renderer / Clock / Passthrough Contracts (P0-015)
 add_subdirectory(src/audio/contracts)
 add_subdirectory(tests/audio/contracts)
+
+# Subtitle / Overlay Contracts (P0-016)
+add_subdirectory(src/subtitle/contracts)
+add_subdirectory(tests/subtitle/contracts)
