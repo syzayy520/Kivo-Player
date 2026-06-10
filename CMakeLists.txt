@@ -73,3 +73,7 @@ add_subdirectory(tests/pipeline/model/probe)
 # Packet Flow Contracts (P0-004)
 add_subdirectory(src/pipeline/model/packet_flow)
 add_subdirectory(tests/pipeline/model/packet_flow)
+
+# Decode Contracts (P0-005)
+add_subdirectory(src/decoder/contracts)
+add_subdirectory(tests/decoder/contracts)
