@@ -85,3 +85,7 @@ add_subdirectory(tests/core/timeline)
 # Clock Domain / A-V Sync Contracts (P0-007)
 add_subdirectory(src/core/clock)
 add_subdirectory(tests/core/clock)
+
+# Presentation Decision / Queue Policy / Contracts (P0-008)
+add_subdirectory(src/core/presentation)
+add_subdirectory(tests/core/presentation)
