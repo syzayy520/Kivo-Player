@@ -125,3 +125,7 @@ add_subdirectory(tests/subtitle/contracts)
 # Execution / Concurrency / Task Contracts (P0-017)
 add_subdirectory(src/execution/contracts)
 add_subdirectory(tests/execution/contracts)
+
+# Diagnostics / Telemetry / Trace Contracts (P0-018)
+add_subdirectory(src/diagnostics/contracts)
+add_subdirectory(tests/diagnostics/contracts)
