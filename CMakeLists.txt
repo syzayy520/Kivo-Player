@@ -97,3 +97,7 @@ add_subdirectory(tests/memory)
 # Demuxer / Media Source Contracts (P0-010)
 add_subdirectory(src/demuxer/contracts)
 add_subdirectory(tests/demuxer/contracts)
+
+# Media Format / Color / HDR Metadata Contracts (P0-011)
+add_subdirectory(src/format/contracts)
+add_subdirectory(tests/format/contracts)
