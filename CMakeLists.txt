@@ -105,3 +105,7 @@ add_subdirectory(tests/format/contracts)
 # Capability / Negotiation Contracts (P0-012)
 add_subdirectory(src/capability/contracts)
 add_subdirectory(tests/capability/contracts)
+
+# Device / Recovery Contracts (P0-013)
+add_subdirectory(src/device/contracts)
+add_subdirectory(tests/device/contracts)
