@@ -109,3 +109,7 @@ add_subdirectory(tests/capability/contracts)
 # Device / Recovery Contracts (P0-013)
 add_subdirectory(src/device/contracts)
 add_subdirectory(tests/device/contracts)
+
+# Video Renderer Contracts (P0-014)
+add_subdirectory(src/render/contracts)
+add_subdirectory(tests/render/contracts)
