@@ -55,7 +55,7 @@ static void test_preroll_requirements() {
 static void test_timeline_reset_reason() {
     using namespace kivo::playback::timeline;
     CHECK(TimelineResetReason::Seek != TimelineResetReason::Recovery);
-    CHECK(TimelineResetReason::StreamSwitch != TimelineResetReason::External);
+    CHECK(TimelineResetReason::StreamSwitch != TimelineResetReason::UserDefined);
 }
 
 static void test_timeline_reset_scope() {
