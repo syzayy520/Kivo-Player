@@ -10,6 +10,7 @@
 | [21-whole-tree-family-governance.md](21-whole-tree-family-governance.md) | ACTIVE | 整树家谱治理规则 |
 | [23-p0-autonomous-execution-master-protocol.md](23-p0-autonomous-execution-master-protocol.md) | ACTIVE | P0 自主执行总协议 |
 | [24-playback-core-north-star.md](24-playback-core-north-star.md) | ACTIVE | 播放核心北极星方向 |
+| [playback-core/modern-media-engine-roadmap-and-p0-checklist.md](playback-core/modern-media-engine-roadmap-and-p0-checklist.md) | ACTIVE | 现代媒体引擎路线与 P0 清单 |
 
 ## 文档命名规则
 
