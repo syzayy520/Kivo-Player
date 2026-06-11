@@ -149,3 +149,7 @@ add_subdirectory(tests/playback/timeline_request)
 # Playback Timeline Decision Routing Skeleton (P1-023)
 add_subdirectory(src/playback/timeline_decision)
 add_subdirectory(tests/playback/timeline_decision)
+
+# Playback Timeline Result Reporting Skeleton (P1-024)
+add_subdirectory(src/playback/timeline_result)
+add_subdirectory(tests/playback/timeline_result)
