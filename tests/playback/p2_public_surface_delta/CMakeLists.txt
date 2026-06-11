@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_surface_delta_tests
+    p2_public_surface_delta_identity_tests.cpp
+    p2_public_surface_delta_anchor_tests.cpp
+    p2_public_surface_delta_classification_tests.cpp
+    p2_public_surface_delta_delta_tests.cpp
+    p2_public_surface_delta_outcome_tests.cpp
+    p2_public_surface_delta_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_surface_delta_tests PRIVATE kivo_playback_p2_public_surface_delta)
+add_test(NAME kivo_playback_p2_public_surface_delta_tests COMMAND kivo_playback_p2_public_surface_delta_tests)
