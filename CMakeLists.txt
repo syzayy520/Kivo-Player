@@ -219,3 +219,6 @@ add_subdirectory(tests/playback/public_error_recovery)
 
 add_subdirectory(src/playback/p1_public_surface_closure_audit)
 add_subdirectory(tests/playback/p1_public_surface_closure_audit)
+
+add_subdirectory(src/playback/p2_public_intake)
+add_subdirectory(tests/playback/p2_public_intake)
