@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_surface_observation_tests
+    p2_public_surface_observation_identity_tests.cpp
+    p2_public_surface_observation_anchor_tests.cpp
+    p2_public_surface_observation_classification_tests.cpp
+    p2_public_surface_observation_observation_tests.cpp
+    p2_public_surface_observation_outcome_tests.cpp
+    p2_public_surface_observation_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_surface_observation_tests PRIVATE kivo_playback_p2_public_surface_observation)
+add_test(NAME kivo_playback_p2_public_surface_observation_tests COMMAND kivo_playback_p2_public_surface_observation_tests)

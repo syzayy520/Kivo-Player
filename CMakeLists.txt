@@ -234,3 +234,6 @@ add_subdirectory(tests/playback/p2_public_completion)
 
 add_subdirectory(src/playback/p2_public_chain_audit)
 add_subdirectory(tests/playback/p2_public_chain_audit)
+
+add_subdirectory(src/playback/p2_public_surface_observation)
+add_subdirectory(tests/playback/p2_public_surface_observation)
