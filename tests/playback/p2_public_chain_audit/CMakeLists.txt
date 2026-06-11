@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_chain_audit_tests
+    p2_public_chain_audit_identity_tests.cpp
+    p2_public_chain_audit_anchor_tests.cpp
+    p2_public_chain_audit_classification_tests.cpp
+    p2_public_chain_audit_audit_tests.cpp
+    p2_public_chain_audit_outcome_tests.cpp
+    p2_public_chain_audit_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_chain_audit_tests PRIVATE kivo_playback_p2_public_chain_audit)
+add_test(NAME kivo_playback_p2_public_chain_audit_tests COMMAND kivo_playback_p2_public_chain_audit_tests)
