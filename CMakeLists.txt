@@ -195,3 +195,6 @@ add_subdirectory(tests/playback/lifecycle_phase)
 
 add_subdirectory(src/playback/session_public)
 add_subdirectory(tests/playback/session_public)
+
+add_subdirectory(src/playback/media_open_public)
+add_subdirectory(tests/playback/media_open_public)
