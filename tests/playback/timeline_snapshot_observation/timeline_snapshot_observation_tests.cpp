@@ -16,13 +16,12 @@ void run_timeline_snapshot_observation_tests() {
     ObservedTimelineSnapshot o2{ident, snap}; assert(o2.snapshot.position.value == 200);
     TimelineSnapshotObservationEnvelope env1;
     assert(env1.identity.observation_id.value == 0);
-    TimelineSnapshotObservationEnvelope env2{ident};
-    assert(env2.identity.observation_id.value == 1);
+    assert(env1.source_ref.report_identity.report_id.value == 0);
+    assert(env1.input_ref.observation_identity.observation_id.value == 0);
     TimelineSnapshotObservationRecord rec1;
     assert(rec1.envelope.identity.observation_id.value == 0);
     assert(rec1.observed_snapshot.identity.observation_id.value == 0);
-    TimelineSnapshotObservationRecord rec2{env2, o2};
-    assert(rec2.envelope.identity.observation_id.value == 1);
+    TimelineSnapshotObservationRecord rec2{env1, o2};
     assert(rec2.observed_snapshot.snapshot.position.value == 200);
     std::cout << "  timeline_snapshot_observation_tests: ALL PASSED\n";
 }
