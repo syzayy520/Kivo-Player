@@ -264,3 +264,12 @@ add_subdirectory(tests/playback/p2_public_surface_readiness_view)
 
 add_subdirectory(src/playback/p2_public_surface_readiness_audit)
 add_subdirectory(tests/playback/p2_public_surface_readiness_audit)
+
+add_subdirectory(src/playback/p2_public_surface_eligibility_view)
+add_subdirectory(tests/playback/p2_public_surface_eligibility_view)
+
+add_subdirectory(src/playback/p2_public_surface_activation_view)
+add_subdirectory(tests/playback/p2_public_surface_activation_view)
+
+add_subdirectory(src/playback/p2_public_surface_activation_audit)
+add_subdirectory(tests/playback/p2_public_surface_activation_audit)
