@@ -1,0 +1,12 @@
+# Copyright (c) 2026 Kivo Project. All rights reserved.
+add_executable(kivo_playback_timeline_public_read_model_tests
+    timeline_public_read_identity_tests.cpp
+    timeline_public_read_anchor_tests.cpp
+    timeline_public_read_classification_tests.cpp
+    timeline_public_read_model_tests.cpp
+    timeline_public_read_outcome_tests.cpp
+    timeline_public_read_boundary_tests.cpp
+)
+target_link_libraries(kivo_playback_timeline_public_read_model_tests PRIVATE kivo_playback_timeline_public_read_model)
+target_compile_features(kivo_playback_timeline_public_read_model_tests PRIVATE cxx_std_23)
+add_test(NAME kivo_playback_timeline_public_read_model_tests COMMAND kivo_playback_timeline_public_read_model_tests)
