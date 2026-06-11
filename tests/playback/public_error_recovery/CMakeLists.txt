@@ -1,0 +1,11 @@
+add_executable(kivo_playback_public_error_recovery_tests
+    public_error_recovery_identity_tests.cpp
+    public_error_recovery_anchor_tests.cpp
+    public_error_recovery_classification_tests.cpp
+    public_error_recovery_recovery_tests.cpp
+    public_error_recovery_outcome_tests.cpp
+    public_error_recovery_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_public_error_recovery_tests PRIVATE kivo_playback_public_error_recovery)
+add_test(NAME kivo_playback_public_error_recovery_tests COMMAND kivo_playback_public_error_recovery_tests)

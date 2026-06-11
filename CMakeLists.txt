@@ -213,3 +213,6 @@ add_subdirectory(tests/playback/track_transition_public)
 
 add_subdirectory(src/playback/end_of_stream_public)
 add_subdirectory(tests/playback/end_of_stream_public)
+
+add_subdirectory(src/playback/public_error_recovery)
+add_subdirectory(tests/playback/public_error_recovery)
