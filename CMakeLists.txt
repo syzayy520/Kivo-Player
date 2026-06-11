@@ -165,3 +165,6 @@ add_subdirectory(tests/playback/timeline_state_summary)
 # Playback Timeline Chain Integrity Skeleton (P1-027)
 add_subdirectory(src/playback/timeline_chain_integrity)
 add_subdirectory(tests/playback/timeline_chain_integrity)
+
+add_subdirectory(src/playback/timeline_error_surface)
+add_subdirectory(tests/playback/timeline_error_surface)
