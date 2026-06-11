@@ -246,3 +246,12 @@ add_subdirectory(tests/playback/p2_public_surface_delta)
 
 add_subdirectory(src/playback/p2_public_surface_chain_closure_audit)
 add_subdirectory(tests/playback/p2_public_surface_chain_closure_audit)
+
+add_subdirectory(src/playback/p2_public_surface_state_view)
+add_subdirectory(tests/playback/p2_public_surface_state_view)
+
+add_subdirectory(src/playback/p2_public_surface_progress_view)
+add_subdirectory(tests/playback/p2_public_surface_progress_view)
+
+add_subdirectory(src/playback/p2_public_surface_consistency_audit)
+add_subdirectory(tests/playback/p2_public_surface_consistency_audit)
