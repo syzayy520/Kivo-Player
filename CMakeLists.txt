@@ -145,3 +145,7 @@ add_subdirectory(tests/playback/control)
 # Playback Timeline Request Normalization Skeleton (P1-022)
 add_subdirectory(src/playback/timeline_request)
 add_subdirectory(tests/playback/timeline_request)
+
+# Playback Timeline Decision Routing Skeleton (P1-023)
+add_subdirectory(src/playback/timeline_decision)
+add_subdirectory(tests/playback/timeline_decision)
