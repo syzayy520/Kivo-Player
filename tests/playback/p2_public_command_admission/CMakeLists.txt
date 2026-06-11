@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_command_admission_tests
+    p2_public_command_admission_identity_tests.cpp
+    p2_public_command_admission_anchor_tests.cpp
+    p2_public_command_admission_classification_tests.cpp
+    p2_public_command_admission_admission_tests.cpp
+    p2_public_command_admission_outcome_tests.cpp
+    p2_public_command_admission_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_command_admission_tests PRIVATE kivo_playback_p2_public_command_admission)
+add_test(NAME kivo_playback_p2_public_command_admission_tests COMMAND kivo_playback_p2_public_command_admission_tests)
