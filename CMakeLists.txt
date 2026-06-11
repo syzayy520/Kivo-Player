@@ -161,3 +161,7 @@ add_subdirectory(tests/playback/timeline_snapshot_observation)
 # Playback Timeline State Summary Skeleton (P1-026)
 add_subdirectory(src/playback/timeline_state_summary)
 add_subdirectory(tests/playback/timeline_state_summary)
+
+# Playback Timeline Chain Integrity Skeleton (P1-027)
+add_subdirectory(src/playback/timeline_chain_integrity)
+add_subdirectory(tests/playback/timeline_chain_integrity)
