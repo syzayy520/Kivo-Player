@@ -327,3 +327,6 @@ add_subdirectory(tests/playback/p2_public_surface_preservation_view)
 
 add_subdirectory(src/playback/p2_public_surface_final_audit)
 add_subdirectory(tests/playback/p2_public_surface_final_audit)
+
+add_subdirectory(src/playback/timeline_public_query_delta)
+add_subdirectory(tests/playback/timeline_public_query_delta)
