@@ -291,3 +291,12 @@ add_subdirectory(tests/playback/p2_public_surface_integrity_view)
 
 add_subdirectory(src/playback/p2_public_surface_integrity_audit)
 add_subdirectory(tests/playback/p2_public_surface_integrity_audit)
+
+add_subdirectory(src/playback/p2_public_surface_coherence_view)
+add_subdirectory(tests/playback/p2_public_surface_coherence_view)
+
+add_subdirectory(src/playback/p2_public_surface_stability_view)
+add_subdirectory(tests/playback/p2_public_surface_stability_view)
+
+add_subdirectory(src/playback/p2_public_surface_stability_audit)
+add_subdirectory(tests/playback/p2_public_surface_stability_audit)
