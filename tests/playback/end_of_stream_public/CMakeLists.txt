@@ -1,0 +1,11 @@
+add_executable(kivo_playback_end_of_stream_public_tests
+    end_of_stream_public_identity_tests.cpp
+    end_of_stream_public_anchor_tests.cpp
+    end_of_stream_public_classification_tests.cpp
+    end_of_stream_public_end_tests.cpp
+    end_of_stream_public_outcome_tests.cpp
+    end_of_stream_public_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_end_of_stream_public_tests PRIVATE kivo_playback_end_of_stream_public)
+add_test(NAME kivo_playback_end_of_stream_public_tests COMMAND kivo_playback_end_of_stream_public_tests)
