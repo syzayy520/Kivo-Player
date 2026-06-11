@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_surface_snapshot_tests
+    p2_public_surface_snapshot_identity_tests.cpp
+    p2_public_surface_snapshot_anchor_tests.cpp
+    p2_public_surface_snapshot_classification_tests.cpp
+    p2_public_surface_snapshot_snapshot_tests.cpp
+    p2_public_surface_snapshot_outcome_tests.cpp
+    p2_public_surface_snapshot_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_surface_snapshot_tests PRIVATE kivo_playback_p2_public_surface_snapshot)
+add_test(NAME kivo_playback_p2_public_surface_snapshot_tests COMMAND kivo_playback_p2_public_surface_snapshot_tests)
