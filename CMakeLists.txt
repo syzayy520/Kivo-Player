@@ -189,3 +189,6 @@ add_subdirectory(tests/playback/timeline_public_response)
 
 add_subdirectory(src/playback/timeline_public_surface_boundary)
 add_subdirectory(tests/playback/timeline_public_surface_boundary)
+
+add_subdirectory(src/playback/lifecycle_phase)
+add_subdirectory(tests/playback/lifecycle_phase)
