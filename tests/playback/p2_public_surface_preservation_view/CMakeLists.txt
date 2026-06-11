@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_surface_preservation_view_tests
+    p2_public_surface_preservation_view_identity_tests.cpp
+    p2_public_surface_preservation_view_anchor_tests.cpp
+    p2_public_surface_preservation_view_classification_tests.cpp
+    p2_public_surface_preservation_view_preservation_view_tests.cpp
+    p2_public_surface_preservation_view_outcome_tests.cpp
+    p2_public_surface_preservation_view_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_surface_preservation_view_tests PRIVATE kivo_playback_p2_public_surface_preservation_view)
+add_test(NAME kivo_playback_p2_public_surface_preservation_view_tests COMMAND kivo_playback_p2_public_surface_preservation_view_tests)
