@@ -141,3 +141,7 @@ add_subdirectory(tests/playback/orchestration)
 # Playback Command / Intent Normalization Skeleton (P1-021)
 add_subdirectory(src/playback/control)
 add_subdirectory(tests/playback/control)
+
+# Playback Timeline Request Normalization Skeleton (P1-022)
+add_subdirectory(src/playback/timeline_request)
+add_subdirectory(tests/playback/timeline_request)
