@@ -243,3 +243,6 @@ add_subdirectory(tests/playback/p2_public_surface_snapshot)
 
 add_subdirectory(src/playback/p2_public_surface_delta)
 add_subdirectory(tests/playback/p2_public_surface_delta)
+
+add_subdirectory(src/playback/p2_public_surface_chain_closure_audit)
+add_subdirectory(tests/playback/p2_public_surface_chain_closure_audit)
