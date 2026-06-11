@@ -228,3 +228,6 @@ add_subdirectory(tests/playback/p2_public_command_admission)
 
 add_subdirectory(src/playback/p2_public_readback)
 add_subdirectory(tests/playback/p2_public_readback)
+
+add_subdirectory(src/playback/p2_public_completion)
+add_subdirectory(tests/playback/p2_public_completion)

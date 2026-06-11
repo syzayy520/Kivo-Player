@@ -1,0 +1,11 @@
+add_executable(kivo_playback_p2_public_completion_tests
+    p2_public_completion_identity_tests.cpp
+    p2_public_completion_anchor_tests.cpp
+    p2_public_completion_classification_tests.cpp
+    p2_public_completion_completion_tests.cpp
+    p2_public_completion_outcome_tests.cpp
+    p2_public_completion_boundary_tests.cpp
+)
+
+target_link_libraries(kivo_playback_p2_public_completion_tests PRIVATE kivo_playback_p2_public_completion)
+add_test(NAME kivo_playback_p2_public_completion_tests COMMAND kivo_playback_p2_public_completion_tests)
