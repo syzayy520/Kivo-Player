@@ -318,3 +318,12 @@ add_subdirectory(tests/playback/p2_public_surface_retention_view)
 
 add_subdirectory(src/playback/p2_public_surface_retention_audit)
 add_subdirectory(tests/playback/p2_public_surface_retention_audit)
+
+add_subdirectory(src/playback/p2_public_surface_custody_view)
+add_subdirectory(tests/playback/p2_public_surface_custody_view)
+
+add_subdirectory(src/playback/p2_public_surface_preservation_view)
+add_subdirectory(tests/playback/p2_public_surface_preservation_view)
+
+add_subdirectory(src/playback/p2_public_surface_final_audit)
+add_subdirectory(tests/playback/p2_public_surface_final_audit)
