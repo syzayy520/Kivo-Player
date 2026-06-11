@@ -52,9 +52,11 @@ foreach ($dir in $dirsToCheck) {
             continue
         }
         
-        # Check for forbidden tokens (in all content, including comments)
+        # Check for forbidden tokens with word-boundary matching
+        # \b ensures tokens match as whole words, not as substrings of identifiers
+        # Example: 'ui' will NOT match inside 'uint64_t' or 'build'
         foreach ($token in $forbiddenTokens) {
-            if ($content -match $token) {
+            if ($content -match "\b$([regex]::Escape($token))\b") {
                 Write-Output "STOP: [$($file.FullName)] contains forbidden token: $token"
                 $exitCode = 1
                 break
