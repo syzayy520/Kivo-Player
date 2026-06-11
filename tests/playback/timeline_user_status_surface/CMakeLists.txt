@@ -1,0 +1,12 @@
+# Copyright (c) 2026 Kivo Project. All rights reserved.
+add_executable(kivo_playback_timeline_user_status_surface_tests
+    timeline_user_status_identity_tests.cpp
+    timeline_user_status_anchor_tests.cpp
+    timeline_user_status_classification_tests.cpp
+    timeline_user_status_surface_tests.cpp
+    timeline_user_status_outcome_tests.cpp
+    timeline_user_status_boundary_tests.cpp
+)
+target_link_libraries(kivo_playback_timeline_user_status_surface_tests PRIVATE kivo_playback_timeline_user_status_surface)
+target_compile_features(kivo_playback_timeline_user_status_surface_tests PRIVATE cxx_std_23)
+add_test(NAME kivo_playback_timeline_user_status_surface_tests COMMAND kivo_playback_timeline_user_status_surface_tests)
