@@ -192,3 +192,6 @@ add_subdirectory(tests/playback/timeline_public_surface_boundary)
 
 add_subdirectory(src/playback/lifecycle_phase)
 add_subdirectory(tests/playback/lifecycle_phase)
+
+add_subdirectory(src/playback/session_public)
+add_subdirectory(tests/playback/session_public)
