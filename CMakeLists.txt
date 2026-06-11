@@ -198,3 +198,6 @@ add_subdirectory(tests/playback/session_public)
 
 add_subdirectory(src/playback/media_open_public)
 add_subdirectory(tests/playback/media_open_public)
+
+add_subdirectory(src/playback/stream_selection_public)
+add_subdirectory(tests/playback/stream_selection_public)
