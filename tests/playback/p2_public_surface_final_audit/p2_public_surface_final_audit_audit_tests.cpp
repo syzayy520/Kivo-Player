@@ -11,7 +11,7 @@ using namespace kivo::playback::p2_public_surface_final_audit;
 void test_p2_public_surface_final_audit_audit_default_construction() {
     P2PublicSurfaceFinalAuditCandidate candidate{};
     assert(candidate.identity.audit_id.value == 0);
-    assert(candidate.anchors.source_anchor.source_identity_token == 0);
+    assert(candidate.anchors.source_anchor.preservation_view_identity.view_id.value == 0);
     assert(candidate.classification.kind == P2PublicSurfaceFinalAuditKind::Unknown);
     PlaybackP2PublicSurfaceFinalAudit audit{};
     assert(audit.identity.audit_id.value == 0);

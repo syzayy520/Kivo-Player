@@ -10,15 +10,15 @@ using namespace kivo::playback::p2_public_surface_final_audit;
 
 void test_p2_public_surface_final_audit_boundary_cross_family() {
     P2PublicSurfaceSourceFinalAnchor anchor{};
-    anchor.source_identity_token = 123;
-    assert(anchor.source_identity_token == 123);
+    anchor.preservation_view_identity.view_id = kivo::playback::p2_public_surface_preservation_view::P2PublicSurfacePreservationViewId{123};
+    assert(anchor.preservation_view_identity.view_id.value == 123);
     PlaybackP2PublicSurfaceFinalAudit audit{
         .identity = P2PublicSurfaceFinalAuditIdentity{.audit_id = P2PublicSurfaceFinalAuditId{1}},
         .anchors = P2PublicSurfaceFinalAuditAnchorSet{.source_anchor = anchor},
         .classification = P2PublicSurfaceFinalAuditClassification{.kind = P2PublicSurfaceFinalAuditKind::SurfaceFinalized, .scope = P2PublicSurfaceFinalAuditScope::AuditBoundary}
     };
     assert(audit.identity.audit_id.value == 1);
-    assert(audit.anchors.source_anchor.source_identity_token == 123);
+    assert(audit.anchors.source_anchor.preservation_view_identity.view_id.value == 123);
     assert(audit.classification.kind == P2PublicSurfaceFinalAuditKind::SurfaceFinalized);
     assert(audit.classification.scope == P2PublicSurfaceFinalAuditScope::AuditBoundary);
     P2PublicSurfaceFinalAuditOutcome outcome{.identity = P2PublicSurfaceFinalAuditIdentity{.audit_id = P2PublicSurfaceFinalAuditId{42}}, .status = P2PublicSurfaceFinalAuditStatus::Recorded};
