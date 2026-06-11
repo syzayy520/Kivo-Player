@@ -207,3 +207,6 @@ add_subdirectory(tests/playback/seek_public)
 
 add_subdirectory(src/playback/buffering_public)
 add_subdirectory(tests/playback/buffering_public)
+
+add_subdirectory(src/playback/track_transition_public)
+add_subdirectory(tests/playback/track_transition_public)
