@@ -1,0 +1,15 @@
+#pragma once
+
+#include "p2_public_surface_eligibility_view_kind.h"
+#include "p2_public_surface_eligibility_view_scope.h"
+
+namespace kivo::playback::p2_public_surface_eligibility_view {
+
+struct P2PublicSurfaceEligibilityViewClassification {
+    P2PublicSurfaceEligibilityViewKind kind{P2PublicSurfaceEligibilityViewKind::Unknown};
+    P2PublicSurfaceEligibilityViewScope scope{P2PublicSurfaceEligibilityViewScope::Unknown};
+
+    bool operator==(const P2PublicSurfaceEligibilityViewClassification& other) const = default;
+};
+
+} // namespace kivo::playback::p2_public_surface_eligibility_view
