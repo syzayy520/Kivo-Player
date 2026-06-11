@@ -177,3 +177,6 @@ add_subdirectory(tests/playback/timeline_public_read_model)
 
 add_subdirectory(src/playback/timeline_public_snapshot)
 add_subdirectory(tests/playback/timeline_public_snapshot)
+
+add_subdirectory(src/playback/timeline_public_delta)
+add_subdirectory(tests/playback/timeline_public_delta)
