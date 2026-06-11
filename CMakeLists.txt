@@ -153,3 +153,7 @@ add_subdirectory(tests/playback/timeline_decision)
 # Playback Timeline Result Reporting Skeleton (P1-024)
 add_subdirectory(src/playback/timeline_result)
 add_subdirectory(tests/playback/timeline_result)
+
+# Playback Timeline Snapshot Observation Skeleton (P1-025)
+add_subdirectory(src/playback/timeline_snapshot_observation)
+add_subdirectory(tests/playback/timeline_snapshot_observation)
